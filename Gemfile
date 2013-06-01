@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3-ruby', '1.3.3', :require => 'sqlite3'
+gem 'sqlite3-ruby', '1.3.2', :group => :development
 gem 'gravatar_image_tag', '1.1.3'
 gem 'will_paginate', '3.0.4'
 
@@ -17,6 +17,7 @@ group :test do
   gem 'spork', '0.9.2'
   gem 'factory_girl_rails', '4.2.1'
 end
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
