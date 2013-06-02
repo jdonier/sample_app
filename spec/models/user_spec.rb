@@ -174,5 +174,75 @@ describe User do
         @user.feed.include?(mp3).should be_false
       end
     end
+	describe "état de l'alimentation" do
+
+      it "devrait avoir une alimentation" do
+        @user.should respond_to(:feed)
+      end
+
+      it "devrait inclure les micro-messages de l'utilisateur" do
+        @user.feed.should include(@mp1)
+        @user.feed.should include(@mp2)
+      end
+
+      it "ne devrait pas inclure les micro-messages d'un utilisateur différent" do
+        mp3 = Factory(:micropost,
+                      :user => Factory(:user, :email => Factory.next(:email)))
+        @user.feed.should_not include(mp3)
+      end
+
+      it "devrait inclure les micro-messages des utilisateurs suivis" do
+        followed = Factory(:user, :email => Factory.next(:email))
+        mp3 = Factory(:micropost, :user => followed)
+        @user.follow!(followed)
+        @user.feed.should include(mp3)
+      end
+    end
   end
+  describe "relationships" do
+
+    before(:each) do
+      @user = User.create!(@attr)
+      @followed = Factory(:user)
+    end
+
+    it "devrait posséder une méthode `relationships`" do
+      @user.should respond_to(:relationships)
+    end
+
+    it "devrait posséder une méthode `following" do
+      @user.should respond_to(:following)
+    end
+	 it "devrait suivre un autre utilisateur" do
+      @user.follow!(@followed)
+      @user.should be_following(@followed)
+    end
+
+    it "devrait inclure l'utilisateur suivi dans la liste following" do
+      @user.follow!(@followed)
+      @user.following.should include(@followed)
+    end
+	it "devrait avoir une méthode unfollow!" do
+      @followed.should respond_to(:unfollow!)
+    end
+
+    it "devrait arrêter de suivre un utilisateur" do
+      @user.follow!(@followed)
+      @user.unfollow!(@followed)
+      @user.should_not be_following(@followed)
+    end  
+    it "devrait avoir un méthode reverse_relationship" do
+      @user.should respond_to(:reverse_relationships)
+    end
+
+    it "devrait avoir une méthode followers" do
+      @user.should respond_to(:followers)
+    end
+
+    it "devrait inclure le lecteur dans le tableau des lecteurs" do
+      @user.follow!(@followed)
+      @followed.followers.should include(@user)
+    end
+  end
+  
 end
