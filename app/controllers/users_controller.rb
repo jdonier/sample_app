@@ -7,6 +7,11 @@
     @user = User.new
     @titre = "Inscription"
   end  
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Utilisateur supprimé."
+    redirect_to users_path
+  end
   def index
     @titre = "Tous les utilisateurs"
     @users = User.paginate(:page => params[:page])
@@ -38,11 +43,6 @@
       @titre = "Édition profil"
       render 'edit'
     end
-  end
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "Utilisateur supprimé."
-    redirect_to users_path
   end
   
   
