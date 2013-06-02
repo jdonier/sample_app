@@ -1,7 +1,7 @@
-module ApplicationHelper
-# Retourner un titre bas� sur la page.
+﻿module ApplicationHelper
+# Retourner un titre basé sur la page.
   def titre
-    base_titre = "Cerbere Capital"
+    base_titre = "Cerbère Capital"
     if @titre.nil?
       base_titre
     else
@@ -9,6 +9,6 @@ module ApplicationHelper
     end
   end
   def logo
-    image_tag("logo.png", :alt => "Application Exemple", :class => "round")
+    image_tag("logo.jpg", :alt => "Application Exemple", :class => "round")
   end
 end

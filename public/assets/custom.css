@@ -1,46 +1,57 @@
 .container {
-  width: 710px;
+  /*width: 710px;*/
+}
+* {
+margin: 0px;
+padding: 0px;
+border-width: 0px;
 }
 
 body {
-  background: #cff;
+  background-image: -webkit-gradient(linear, left top, left bottom,
+    from(#d0d0d0), to(#808080) );
 }
 
 header {
-  padding-top: 20px;
+ /*  padding-top: 20px; */
+ margin-top: -20px;
+  background: #acacac;
 }
 
 header img {
-  padding: 1em;
-  background: #fff;
+  padding: 0em;
+  background: #acacac;
 }
 
 section {
-  margin-top: 1em;
+  margin-top: 0px;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
+  background: #e0e0e0;
 }
 
 section h1 {
   font-size: 200%;
 }
 
+section table{
+  margin-top: -20px;
+}
+section table table{
+  margin-top: 20px;
+}
 /* Liens */
 
 a {
-  color: #09c;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #069;
-  text-decoration: underline;
+  color: black;
 }
 
-a:visited {
-  color: #069;
-}
+
 
 
 /* Navigation */
@@ -50,9 +61,11 @@ nav {
 }
 
 nav {
-  background-color: white;
-  padding: 0 0.7em;
+  background-color: #acacac;
+  padding: 0em;
   white-space: nowrap;
+  font-size: 20px;
+  font-family: "Times New Roman";
 }
 
 nav ul {
@@ -67,16 +80,18 @@ nav ul li {
 }
 
 nav ul li a {
+  color: white;
   padding: 0 5px;
   font-weight: bold;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: white;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: black;
 }
 
 /* Bouton inscription */
@@ -87,20 +102,21 @@ a.signup_button {
   display: block;
   text-align: center;
   width: 190px;
-  color: #fff;
-  background: #006400;
+  color: white;
+  background: #FF80C0;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
-/* Coins arrondis */
+/* Coins arrondis 
 
 .round {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
-}
+}*/
 
 footer {
   text-align: center;
@@ -108,6 +124,7 @@ footer {
   width: 710px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #c0c0c0;
 }
 
 footer nav {
@@ -119,18 +136,19 @@ footer nav {
 table.profile {
   width: 100%;
   margin-bottom: 0;
+  background-color: #d0d0d0;
 }
 
 td.main {
   width: 70%;
-  padding: 1em;
+  padding: 0em;
 }
 
 td.sidebar {
   width: 30%;
-  padding: 1em;
+  padding: 0em;
   vertical-align: top;
-  background: #ffc;
+  background: #c0c0c0;
 }
 
 .profile img.gravatar {
@@ -146,8 +164,8 @@ div.field, div.actions {
 
 .field_with_errors {
   margin-top: 10px;
-  padding: 2px;
-  background-color: red;
+  padding-top: 0px;
+  background-color: #FF80C0;
   display: table;
 }
 
@@ -157,7 +175,7 @@ div.field, div.actions {
 
 #error_explanation {
   width: 400px;
-  border: 2px solid red;
+  border: 2px solid #FF80C0;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -170,7 +188,7 @@ div.field, div.actions {
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px;
-  background-color: #c00;
+  background-color: #FF80C0;
   color: #fff;
 }
 
@@ -195,27 +213,31 @@ ul.users {
 
 
 h1.micropost {
-  margin-bottom: 0.3em;
+  margin-bottom: 0em;
 }
 
 table.microposts {
-  margin-top: 1em;
+  margin-top: 0em;
 }
 
 table.microposts tr {
-  height: 70px;
+  height: 50px;
+}
+
+table.microposts a {
+  color: #FF80C0;
 }
 
 table.microposts tr td.gravatar {
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
   vertical-align: top;
-  width: 50px;
+  width: 40px;
 }
 
 table.microposts tr td.micropost {
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
   vertical-align: top;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 table.microposts tr td.micropost span.timestamp {

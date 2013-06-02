@@ -13,8 +13,8 @@
   </td>
   <% if current_user?(feed_item.user) %>
   <td>
-    <%= button_to "supprimer", feed_item, :method => :delete,
-                                     :confirm => "Etes-vous certain ?",
+    <%= button_to "delete", feed_item, :method => :delete,
+                                     :confirm => "Are you sure ?",
                                      :title => feed_item.content %>
   </td>
   <% end %>
