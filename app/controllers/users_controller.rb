@@ -18,6 +18,7 @@
   end
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page])
     @titre = @user.nom
   end
   def create
